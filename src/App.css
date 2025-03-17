@@ -1,1 +1,181 @@
 @import "tailwindcss";
+
+body{
+    background-color: #141414;
+    overflow-x: hidden;
+}
+@font-face {
+    font-family: Manrope-Bold;
+    src: url(../src/assets/fonts/Manrope-Bold.ttf);
+}
+@font-face {
+    font-family: Manrope-Regular;
+    src: url(../src/assets/fonts/Manrope-Regular.ttf);
+}
+@font-face {
+    font-family: Manrope-SemiBold;
+    src: url(../src/assets/fonts/Manrope-SemiBold.ttf);
+}
+@font-face {
+    font-family: Manrope-Medium;
+    src: url(../src/assets/fonts/Manrope-Medium.ttf);
+}
+.Manrope-Regular{
+    font-family:  Manrope-Regular;
+}
+.Manrope-Medium{
+    font-family:  Manrope-Medium;
+}
+.Manrope-SemiBold{
+    font-family:  Manrope-SemiBold;
+}
+.Manrope-Bold{
+    font-family:  Manrope-Bold;
+}
+.imageCard{
+    width: 138px;
+    height: 148px;
+}
+@media only screen and (min-width:640px){
+    .imageCard{
+        width: 128px;
+        height: 148px;
+    }
+}
+.navList{
+    background-color: #0f0f0f;
+    margin-left: -35px;
+}
+.overlay{
+    background: rgb(20,20,20);
+    background: linear-gradient(180deg, rgba(20,20,20,1) 0%, rgba(0,0,0,0.26094187675070024) 35%, rgba(20,20,20,1) 100%);
+
+}
+.cta button{
+    background-color: rgb(212, 2, 2);
+}
+.active{
+    background-color: #1f1f1f;
+
+}
+.navlist{
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+.catt{
+    background-color: #101010;
+}
+.catIcon, .indicator{
+    background-color: #262626;
+}
+.text-red{
+    color: red;
+}
+.indicator.active{
+    background-color: rgb(212, 2, 2);
+}
+.categoryCard{
+    background-color: #1a1a1a;
+    width: 225px;
+    height: 265px;
+    border: 1px solid #262626;
+}
+.title{
+    background: rgb(26,26,26);
+    background: linear-gradient(0deg, rgba(26,26,26,1) 0%, rgba(26,26,26,0) 100%);
+}
+.card{
+    background: rgb(229,0,0);
+    background: linear-gradient(214deg, rgba(229,0,0,0.4738270308123249) 0%, rgba(86,10,10,1) 0%, rgba(28,14,14,1) 19%, rgba(15,15,15,1) 28%);
+}
+.cardIcon{
+    background-color: #1f1f1f;
+    border: 1px solid #262626;
+}
+.num{
+    background-color: #1f1f1f;
+    border: 1px solid #262626;
+    height: 40px;
+}
+.pricingCard{
+    background-color: #1f1f1f;
+    border: 1px solid #262626;
+}
+.faqCard{
+    align-self: start;
+    position: relative;
+   z-index: 2;
+}
+.faqCard::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding: 20px;
+    background: rgb(229,0,0);
+    background: radial-gradient(circle, rgba(229,0,0,1) 0%, rgba(15,15,15,0.773546918767507) 100%);
+    height: 1px;
+    padding: 0px;
+}
+.btns button:nth-child(1){
+    border: 1px solid #262626;
+    background-color: #0f0f0f;
+}
+.btns button:nth-child(2){
+    background-color: #e50000;
+}
+.trialCard{
+    border: 1px solid #262626;
+    background: rgb(15,15,15);
+}
+.trialCardOverlay{
+    background: rgb(15,15,15);
+background: linear-gradient(90deg, rgba(15,15,15,1) 2%, rgba(20,15,15,0.94) 27%, rgba(34,14,14,0.91) 44%, rgba(229,0,0,0.5214460784313726) 100%);
+}
+.trialBtn button{
+    background-color: red;
+
+}
+.footer{
+    background-color: #0f0f0f;
+}
+.icon{
+    background-color: #1f1f1f;
+}
+.preview{
+    background-color: #0f0f0f;
+}
+.overlay2{
+    background: rgb(15,15,15);
+background: linear-gradient(0deg, rgba(15,15,15,1) 2%, rgba(20,15,15,0.35898109243697474) 50%);
+}
+a{
+    color: white;
+}
+a:hover{
+    color: red;
+}
+.bt-bg-red-900{
+    background-color: red;
+}
+.bt-bg-black-900{
+    background-color: black;
+}
+.bg-black-shade-3{
+    background-color: #1a1a1a;
+}
+.reviewCard{
+    background:#0f0f0f;
+    /* width: 400px; */
+}
+.slidebtn{
+    background-color:#0f0f0f;
+}
+.slide::-webkit-scrollbar{
+    -webkit-appearance: none;
+    scrollbar-width: 0;
+
+}
+::-webkit-scrollbar{
+    width: 0;
+}
