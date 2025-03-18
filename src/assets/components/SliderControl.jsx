@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { HiOutlineArrowSmallLeft, HiOutlineArrowSmallRight } from "react-icons/hi2";
 
-const SliderControl = ({ indicator = false, scrollRef }) => {
+const SliderControl = ({ indicator = false, scrollRef, itemsPerPage }) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [totalPages, setTotalPages] = useState(0);
 
     useEffect(() => {
         if (scrollRef?.current) {
             const totalItems = scrollRef.current.children.length; // Count items
-            const itemsPerPage = 2; // Number of items per scroll
+            // const itemsPerPage = itemsPerPage; // Number of items per scroll
             setTotalPages(Math.ceil(totalItems / itemsPerPage)); // Total pages
         }
-    }, [scrollRef]);
+    }, [scrollRef,itemsPerPage]);
 
     const scroll = (direction) => {
         if (scrollRef?.current) {
             const elementWidth = scrollRef.current.children[0]?.offsetWidth + 15 || 210; // Get element width
-            const scrollAmount = elementWidth * 2; // Scroll by two elements
+            const scrollAmount = elementWidth * itemsPerPage; // Scroll by two elements
             const newScrollLeft = direction === "left"
                 ? scrollRef.current.scrollLeft - scrollAmount
                 : scrollRef.current.scrollLeft + scrollAmount;
