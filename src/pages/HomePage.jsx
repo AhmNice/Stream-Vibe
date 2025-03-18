@@ -17,6 +17,7 @@ import FaqCard from '../assets/components/FaqCard';
 import PricingCard from '../assets/components/PricingCard';
 import Footer from '../assets/components/Footer';
 import SlideControl from '../assets/components/SlideControl';
+import FootAds from '../assets/components/FootAds';
 
 const HomePage = () => {
   const pictures = [
@@ -183,7 +184,7 @@ const HomePage = () => {
             </div>
             <div className="intro flex items-center justify-center flex-col px-10 gap-5">
               <p className=' Manrope-Bold text-center text-3xl md:text-5xl'>The Best Streaming Experience</p>
-              <p className='text-gray-400 text-center text-sm Manrope-regular '>StreamVibe is the best streaming experience for watching your favorite movies and shows on demand, anytime, anywhere. With StreamVibe, you can enjoy a wide variety of content, including the latest blockbusters, classic movies, popular TV shows, and more. You can also create your own watchlists, so you can easily find the content you want to watch.</p>
+              <p className='text-gray-400 text-center text-sm Manrope-Regular '>StreamVibe is the best streaming experience for watching your favorite movies and shows on demand, anytime, anywhere. With StreamVibe, you can enjoy a wide variety of content, including the latest blockbusters, classic movies, popular TV shows, and more. You can also create your own watchlists, so you can easily find the content you want to watch.</p>
               <div className="cta flex justify-center items-center">
                 <button className='bg-red-900 rounded-md Manrope-SemiBold text-white flex items-center gap-2'>
                   <IoPlay />
@@ -253,24 +254,7 @@ const HomePage = () => {
         </div>
       </section>
       <section>
-        <div className='flex md:px-20 w-screen px-8 py-20'>
-          <div className="rounded-md trialCard relative h-62 w-full relative overflow-hidden">
-            <div className="backimage grid grid-cols-9 overflow-hidden gap-5">
-              {pictures.map((picture, index) =>
-                <BackImage key={index} image={picture.src} />
-              )}
-            </div>
-            <div className="trialCardOverlay top-0 md:flex md:flex-row md:justify-between left-0 p-5 gap-5 justify-center items-center md:p-20 flex flex-col md:justify-between items center absolute w-full h-full">
-              <div>
-                <h3 className='Manrope-Bold text-xl md:text-3xl text-white'>Start your free trial today!</h3>
-                <p className='text-gray-500'>This is a clear and concise call to action that encourages users to sign up for a free trial of StreamVibe.</p>
-              </div>
-              <div className='trialBtn'>
-                <button className='px-8 py-10 bg-red-900 text-white'>Start A Free Trial</button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <FootAds  pictures={pictures}/>
       </section>
       <Footer />
     </section>

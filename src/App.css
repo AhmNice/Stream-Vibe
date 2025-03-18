@@ -2,7 +2,7 @@
 
 body{
     background-color: #141414;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 @font-face {
     font-family: Manrope-Bold;

@@ -9,7 +9,7 @@ const FaqCard = ({ index, question, answer }) => {
   };
 
   return (
-    <div className="faqCard flex gap-4 w-full py-5 self-start cursor-pointer " onClick={toggleOpen}>
+    <div className="faqCard flex gap-4 w-full h-max py-5 self-start cursor-pointer " onClick={toggleOpen}>
       <div className="faq flex gap-5">
         <div className="num px-4 py-3 text-white rounded-md flex items-center justify-center">{index}</div>
       </div>

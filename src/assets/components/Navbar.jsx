@@ -24,10 +24,12 @@ const Navbar = () => {
         <nav className={`navList md:flex absolute ${isOpen? 'block':'hidden'}  top-0 right-0 md:relative md:h-auto md:w-auto w-screen h-screen z-10 md:justify-evenly p-3 gap-10 rounded-md border-2 border-gray-600`}>
                     <div className="md:hidden w-full flex justify-end py-5 px-2" onClick={toggleOpen}><FaTimes />
                     </div>
+                    <div className='flex flex-col gap-5 md:flex md:flex-row'>
                     <NavLink to={'/'} className='navlist'>Home</NavLink>
                     <NavLink to={'/movie'} className='navlist'>Movies & Shows</NavLink>
                     <NavLink to={'/support'} className='navlist'>Support</NavLink>
                     <NavLink to={'/subscription'} className='navlist'>Subscription</NavLink>
+                    </div>
         </nav>
         <div className='flex gap-5 items-center'>
           <IoIosSearch className='text-2xl' />
