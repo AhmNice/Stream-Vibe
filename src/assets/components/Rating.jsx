@@ -1,16 +1,23 @@
 import React from 'react'
 import { FaStarHalfAlt } from "react-icons/fa";
 import { FaStar } from 'react-icons/fa6';
+// import PropTypes from 'prop-types';
+const Rating = ({rating, maxRating = 6}) => {
+    const ratings =[]
+    for (let index = 1; index < maxRating; index++) {
+        if(index <= rating){
+            ratings.push(<FaStar key={index} className='text-red' />)
+        }else if(index - 0.5 === rating){
+            ratings.push(<FaStarHalfAlt key={index} className='text-red' />)
+        }else {
+            ratings.push(<FaStar key={index} className='text-gray-400'/>)
+        }
 
-
-const Rating = ({rating = 2}) => {
+    }
   return (
-    <div className='rounded-full border border-gray-500 text-red w-[40%] flex text-lg'>
-            {Array.from({length:5}).map((_,index)=>{
-               if(rating){}
-            })}
-    </div>
+        <div className="flex gap-2">{ratings}</div>
   )
+
 }
 
 export default Rating
