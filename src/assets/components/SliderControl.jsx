@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { HiOutlineArrowSmallLeft, HiOutlineArrowSmallRight } from "react-icons/hi2";
 
-const SliderControl = ({ indicator = false, scrollRef, itemsPerPage }) => {
+const SliderControl = ({ indicator = false, scrollRef, itemsPerPage=2 }) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [totalPages, setTotalPages] = useState(0);
 

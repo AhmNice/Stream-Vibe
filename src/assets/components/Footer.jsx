@@ -8,8 +8,8 @@ import { FaLinkedin } from "react-icons/fa";
 const Footer = () => {
   return (
     <section>
-            <div className="w-  md:px-20 pt-20 pb-5 footer">
-                    <div className="footerTop md:flex gap-8 grid grid-cols-2 p-8 md:items-start items-center md:justify-between pb-10">
+            <div className="w-screen lg:px-20 pt-20 pb-5 footer">
+                    <div className="footerTop lg:flex gap-8 grid grid-cols-2 p-8 lg:items-start items-center lg:justify-between pb-10">
                         <div className='flex flex-col gap-3'>
                           <h4 className='Manrope-SemiBold text-lg text-white'>Home</h4>
                           <ul className='flex flex-col gap-2'>
@@ -65,7 +65,7 @@ const Footer = () => {
                       </div>
                     </div>
                     </div>
-                    <div className="foot flex flex-col md:flex-row text-center md:justify-between py-5 border-t border-gray-700">
+                    <div className="foot flex flex-col lg:flex-row text-center lg:justify-between py-5 border-t border-gray-700">
                       <div className="copyright text-gray-400">
                         <p>@2023 streamvibe, All Rights Reserved</p>
                       </div>

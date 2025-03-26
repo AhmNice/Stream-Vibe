@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import ImageCard from '../assets/components/ImageCard';
 import BackImage from '../assets/components/BackImage';
 import logo from '../assets/images/Abstract Design.png';
@@ -19,6 +19,116 @@ import Footer from '../assets/components/Footer';
 import SlideControl from '../assets/components/SlideControl';
 import FootAds from '../assets/components/FootAds';
 
+const plans = {
+  "monthly": [
+    {
+      "id": "basic_monthly",
+      "name": "Basic",
+      "price": 9.99,
+      "currency": "USD",
+      "content": "Enjoy an extensive library of movies and shows, featuring a range of content, including recently released titles.",
+      "devices": 1,
+      "free_trial_days": 7,
+      "cancel_anytime": true,
+      "features": {
+        "hdr": false,
+        "dolby_atmos": false,
+        "ad_free": false,
+        "offline_viewing": false,
+        "family_sharing": false
+      }
+    },
+    {
+      "id": "standard_monthly",
+      "name": "Standard",
+      "tag": "Popular",
+      "price": 12.99,
+      "currency": "USD",
+      "content": "Access to a wider selection of movies and shows, including most new releases and exclusive content.",
+      "devices": 2,
+      "free_trial_days": 7,
+      "cancel_anytime": true,
+      "features": {
+        "hdr": true,
+        "dolby_atmos": true,
+        "ad_free": true,
+        "offline_viewing": "Yes, for select titles.",
+        "family_sharing": "Yes, up to 5 family members."
+      }
+    },
+    {
+      "id": "premium_monthly",
+      "name": "Premium",
+      "price": 14.99,
+      "currency": "USD",
+      "content": "Access to the widest selection of movies and shows, including all new releases and offline viewing.",
+      "devices": 4,
+      "free_trial_days": 7,
+      "cancel_anytime": true,
+      "features": {
+        "hdr": true,
+        "dolby_atmos": true,
+        "ad_free": true,
+        "offline_viewing": "Yes, for all titles.",
+        "family_sharing": "Yes, up to 5 family members."
+      }
+    }
+  ],
+  "yearly": [
+    {
+      "id": "basic_yearly",
+      "name": "Basic",
+      "price": 99.99,
+      "currency": "USD",
+      "content": "Access to a wide selection of movies and shows, including some new releases.",
+      "devices": 1,
+      "free_trial_days": 7,
+      "cancel_anytime": true,
+      "features": {
+        "hdr": false,
+        "dolby_atmos": false,
+        "ad_free": false,
+        "offline_viewing": false,
+        "family_sharing": false
+      }
+    },
+    {
+      "id": "standard_yearly",
+      "name": "Standard",
+      "tag": "Popular",
+      "price": 129.99,
+      "currency": "USD",
+      "content": "Access to a wider selection of movies and shows, including most new releases and exclusive content.",
+      "devices": 2,
+      "free_trial_days": 7,
+      "cancel_anytime": true,
+      "features": {
+        "hdr": true,
+        "dolby_atmos": true,
+        "ad_free": true,
+        "offline_viewing": "Yes, for select titles.",
+        "family_sharing": "Yes, up to 5 family members."
+      }
+    },
+    {
+      "id": "premium_yearly",
+      "name": "Premium",
+      "price": 149.99,
+      "currency": "USD",
+      "content": "Access to the widest selection of movies and shows, including all new releases and offline viewing.",
+      "devices": 4,
+      "free_trial_days": 7,
+      "cancel_anytime": true,
+      "features": {
+        "hdr": true,
+        "dolby_atmos": true,
+        "ad_free": true,
+        "offline_viewing": "Yes, for all titles.",
+        "family_sharing": "Yes, up to 5 family members."
+      }
+    }
+  ]
+}
 const HomePage = () => {
   const pictures = [
     { src: 'src/assets/images/image.png' },
@@ -150,40 +260,34 @@ const HomePage = () => {
     }
   ];
 
-  const pricingPlans = [
-    {
-      type: "Basic",
-      description: "Access to a limited selection of movies and TV shows.",
-      price: "$5.99"
-    },
-    {
-      type: "Standard",
-      description: "Access to a wider selection of movies and TV shows, including HD content.",
-      price: "$9.99"
-    },
-    {
-      type: "Premium",
-      description: "Access to the full library of movies and TV shows, including Ultra HD content.",
-      price: "$14.99"
-    }
-  ];
 
+
+const [billing_circle, setBilling_circle] = useState('monthly')
+const selectedPlan = billing_circle === 'monthly'? plans.monthly :plans.yearly;
+const switchPlan =(billing_circle,refDiv)=>{
+  setBilling_circle(billing_circle)
+  yearlyPlanRef.current.classList.remove('active')
+  monthlyPlanRef.current.classList.remove('active')
+  refDiv.current.classList.add('active')
+}
+const yearlyPlanRef = useRef(null)
+const monthlyPlanRef = useRef(null)
   return (
     <section className='w-full h-full'>
       <section>
-        <div className='w-screen md:w-full h-screen md:h-full grid grid-cols-3 md:grid md:grid-cols-9 place-center md:gap-2 overflow-hidden'>
+        <div className='w-screen lg:w-full h-screen lg:h-full grid grid-cols-3 lg:grid lg:grid-cols-9 place-center lg:gap-2 overflow-hidden'>
           {pictures.map((picture, index) =>
             <ImageCard key={index} image={picture.src} />
           )}
         </div>
-        <div className="overlay absolute top-0 left-0 w-full h-screen md:h-full bg-black ">
+        <div className="overlay absolute top-0 left-0 w-full h-screen lg:h-full bg-black ">
           <div className="overlayContent w-full h-full from-gray-500 text-white">
             <Navbar />
             <div className="logo flex justify-center p-10">
-              <img src={logo} alt="" className='w-52 md:w-62' />
+              <img src={logo} alt="" className='w-52 lg:w-62' />
             </div>
             <div className="intro flex items-center justify-center flex-col px-10 gap-5">
-              <p className=' Manrope-Bold text-center text-3xl md:text-5xl'>The Best Streaming Experience</p>
+              <p className=' Manrope-Bold text-center text-3xl lg:text-5xl'>The Best Streaming Experience</p>
               <p className='text-gray-400 text-center text-sm Manrope-Regular '>StreamVibe is the best streaming experience for watching your favorite movies and shows on demand, anytime, anywhere. With StreamVibe, you can enjoy a wide variety of content, including the latest blockbusters, classic movies, popular TV shows, and more. You can also create your own watchlists, so you can easily find the content you want to watch.</p>
               <div className="cta flex justify-center items-center">
                 <button className='bg-red-900 rounded-md Manrope-SemiBold text-white flex items-center gap-2'>
@@ -195,28 +299,28 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      <section className="categories flex w-screen flex-col  w-full h-3/4 md:px-20 py-20 gap-8">
-        <div className="categoryHead flex md:justify-between items-center">
-          <div className='flex flex-col gap-4 w-full px-8  py-10 md:px-0'>
+      <section className="categories flex w-screen flex-col  w-full h-3/4 lg:px-20 py-20 gap-8">
+        <div className="categoryHead flex lg:justify-between items-center">
+          <div className='flex flex-col gap-4 w-full px-8  py-10 lg:px-0'>
             <h3 className='Manrope-Bold text-white text-2xl'>Explore our wide variety of categories</h3>
             <p className='Manrope-Regular text-base text-gray-500 '>Whether you're looking for a comedy to make you laugh, a drama to make you think, or a documentary to learn something new</p>
           </div>
          <SlideControl />
         </div>
 
-        <div className="categoryContainer flex overflow-x-auto space-x-4 md:grid md:grid-cols-5 px-8 py-8">
+        <div className="categoryContainer flex overflow-x-auto space-x-4 lg:grid lg:grid-cols-5 px-8 py-8">
           {Object.keys(categories).map((key) => (
             <CategoryCard key={key} title={categories[key].title} images={categories[key].images} />
           ))}
         </div>
       </section>
       <section>
-        <div className="w-screen md:w-full md:px-20 py-20">
-          <div className='flex flex-col gap-2 px-10 md:px-0'>
+        <div className="w-screen lg:w-full lg:px-20 py-20">
+          <div className='flex flex-col gap-2 px-10 lg:px-0'>
             <h2 className='Manrope-Bold text-2xl text-white'>We Provide you streaming experience across various devices.</h2>
             <p className='text-gray-500 Manrope-Regular'>With StreamVibe, you can enjoy your favorite movies and TV shows anytime, anywhere. Our platform is designed to be compatible with a wide range of devices, ensuring that you never miss a moment of entertainment.</p>
           </div>
-          <div className="px-10 md:px-0 flex flex-col md:grid md:grid-cols-3 py-5 gap-5">
+          <div className="px-10 lg:px-0 flex flex-col lg:grid lg:grid-cols-3 py-5 gap-5">
             <Card icon={SmartPhone} title={'Smartphones'} text={'StreamVibe is optimized for both Android and iOS smartphones. Download our app from the Google Play Store or the Apple App Store'} />
             <Card icon={Tablet} title={'Tablet'} text={'StreamVibe is optimized for both Android and iOS smartphones. Download our app from the Google Play Store or the Apple App Store'} />
             <Card icon={Smart} title={'Smart'} text={'StreamVibe is optimized for both Android and iOS smartphones. Download our app from the Google Play Store or the Apple App Store'} />
@@ -227,13 +331,13 @@ const HomePage = () => {
         </div>
       </section>
       <section>
-        <div className='flex flex-col md:px-20 w-screen md:py-20 gap-6'>
+        <div className='flex flex-col lg:px-20 w-screen lg:py-20 gap-6'>
           <div className='flex flex-col gap-2 p-8'>
             <h2 className='Manrope-Bold text-2xl text-white'>Frequently Asked Questions</h2>
             <p className='text-gray-500 Manrope-Regular'>Got questions? We've got answers! Check out our FAQ section to find answers to the most common questions about StreamVibe.</p>
           </div>
 
-          <div className="flex flex-col p-8 md:grid md:grid-cols-2 md:px-6 gap-6">
+          <div className="flex flex-col p-8 lg:grid lg:grid-cols-2 lg:px-6 gap-6">
             {faqs.map((faq) => (
               <FaqCard key={faq.index} index={`0${faq.index}`} question={faq.question} answer={faq.answer} />
             ))}
@@ -241,16 +345,22 @@ const HomePage = () => {
         </div>
       </section>
       <section>
-        <div className="flex flex-col w-screen md:py-20 md:px-20 gap-6">
-          <div className='flex flex-col gap-2 p-8'>
+        <div className="flex flex-col w-screen lg:py-20 lg:px-20 gap-6">
+         <div className="flex justify-between items-center h-max">
+         <div className='flex flex-col gap-2 p-8'>
             <h2 className='Manrope-Bold text-2xl text-white'>Choose the plan that's right for you</h2>
             <p className='text-gray-500 Manrope-Regular'>Join StreamVibe and select from our flexible subscription options tailored to suit your viewing preferences. Get ready for non-stop entertainment!</p>
           </div>
-          <div className=" flex p-8 flex-col md:grid md:grid-cols-3 gap-6">
-            {pricingPlans.map((plan, index) => (
-              <PricingCard key={index} type={plan.type} description={plan.description} price={plan.price} />
-            ))}
-          </div>
+          <div className="planSwitcher  flex gap-4 text-gray-400 justify-between rounded-md Manrope-Regular p-2 ">
+                    <div ref={monthlyPlanRef} onClick={()=> switchPlan('monthly',monthlyPlanRef)} className='p-3 px-5 text-center active rounded-sm'>Monthly</div>
+                    <div ref={yearlyPlanRef} onClick={()=> switchPlan('yearly',yearlyPlanRef)} className='p-3 px-5 text-center rounded-sm'>Yearly</div>
+            </div>
+         </div>
+          <div className="pricingListings flex gap-4">
+                {selectedPlan.map((plan,index)=>(
+                    <PricingCard key={index} type={plan.name} description={plan.content} price={plan.price} billing_circle={billing_circle}/>
+                ))}
+            </div>
         </div>
       </section>
       <section>

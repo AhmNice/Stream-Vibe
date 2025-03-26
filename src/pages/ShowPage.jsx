@@ -164,7 +164,8 @@ useEffect(() => {
                             <div className="description rounded-md p-4 bg-black-shade-3 lg:p-8 flex flex-col gap-3">
                               <div className="head flex justify-between">
                               <p className="Manrope-Medium text-lg text-gray-400">Cast</p>
-                              <div><SliderControl scrollRef={castScrollRef}/></div>
+                              <div><SliderControl scrollRef={castScrollRef}
+                              /></div>
                               </div>
                                 {loading.cast? (
                                     <div className='m-auto h-full flex items-center justify-center'>

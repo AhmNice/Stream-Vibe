@@ -2,7 +2,6 @@
 
 body{
     background-color: #141414;
-    /* overflow-x: hidden; */
 }
 @font-face {
     font-family: Manrope-Bold;
@@ -75,9 +74,9 @@ body{
     background-color: rgb(212, 2, 2);
 }
 .categoryCard{
-    background-color: #1a1a1a;
+    background-color: #1f1f1f;
     width: 225px;
-    height: 265px;
+
     border: 1px solid #262626;
 }
 .title{
@@ -91,6 +90,10 @@ body{
 .cardIcon{
     background-color: #1f1f1f;
     border: 1px solid #262626;
+}
+.movieContainer{
+    border: 1px solid #262626;
+
 }
 .num{
     background-color: #1f1f1f;
@@ -178,4 +181,65 @@ a:hover{
 }
 ::-webkit-scrollbar{
     width: 0;
+}
+* {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE & Edge */
+  }
+
+.movieCard{
+    background-color: #1f1f1f;
+    border: 1px solid #262626;
+}
+.input{
+    background-color: #1f1f1f;
+    border: 1px solid #262626;
+}
+.checkbox:not(:checked) {
+    background-color: #1f1f1f;
+    border: 1px solid #262626;
+  }
+.checkbox{
+    background-color: #1f1f1f;
+    accent-color: #E50000;
+    border: 1px solid #262626;
+}
+.supportForm{
+    background-color: #0f0f0f;
+    border: 1px solid #262626;
+}
+.SearchDivInput{
+    background-color: #333333;
+    border: 1px solid #262626;
+}
+.Sbutton{
+    padding: 10px;
+
+}
+.time, .count{
+    border: 1px solid #333333;
+    background-color: #141414;
+}
+.searchOverlay{
+    background-color: #101010af;
+}
+.containerOverlay{
+    background: rgb(15,15,15);
+    background: linear-gradient(0deg, rgba(15,15,15,1) 0%, rgba(20,15,15,0.33657212885154064) 72%);
+}
+.bg-red{
+    background-color: red;
+}
+.detailsDiv{
+    background-color: #141414;
+    border: 1px solid #262626;
+}
+.planSwitcher{
+    background-color: #0f0f0f;
+}
+th{
+    background-color: #0f0f0f;
+}
+td,tr{
+    border: 1px solid #999999;
 }
